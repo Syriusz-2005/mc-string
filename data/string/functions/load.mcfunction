@@ -5,3 +5,7 @@
 #declare storage string:out
 
 scoreboard objectives add string.math dummy
+
+
+#> LiteralToken = {strContent: string}
+#> Token = {} & (LiteralToken)
