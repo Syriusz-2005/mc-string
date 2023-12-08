@@ -23,5 +23,6 @@ function string:private/arr_for_each/call
 
 
 # recursively parsing the regex into regex tokens
+data remove storage string:internal regex_test.tokenTree
 data modify storage string:in str set from storage string:internal regex_test.regex
 function string:regex_test/parse_to_tokens
