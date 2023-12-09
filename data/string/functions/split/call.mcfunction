@@ -1,4 +1,5 @@
 #> {str: string}
+# @returns string:out split
 
 data modify storage string:internal split.str set from storage string:in str
 

@@ -1,5 +1,5 @@
 #> string:in {str1: string; str2: string}
-#> returns 1 | 0
+#> @returns 1 | 0
 
 data modify storage string:internal str1 set from storage string:in str1
 
