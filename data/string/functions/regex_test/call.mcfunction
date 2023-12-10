@@ -19,6 +19,4 @@ data modify storage string:in str set from storage string:internal regex_test.re
 data modify storage string:in pathToToken set value 'tokenTree'
 function string:regex_test/parse_to_tokens
 
-tellraw @a {"text": "after parsing", "color": "red"}
-tellraw @a {"type": "nbt", "source": "storage", "storage": "string:internal", "nbt": "regex_test"}
-tellraw @a {"type": "nbt", "source": "storage", "storage": "string:out", "nbt": "tokenTree", "color": "green"}
+tellraw @a {"text": "Parsed succesfully", "color": "red"}
