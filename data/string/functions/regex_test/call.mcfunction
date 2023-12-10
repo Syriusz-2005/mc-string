@@ -1,4 +1,16 @@
-#> string:in {str: string; regex: string}
+#> string:regex_test/call
+# @public
+# @input string:in {str: string; regex: string}
+# @output string:out hasMatch
+# @output #hasMatch string.math
+# @returns 1 | 0
+# returns 1 if the regex matched the given string
+# 
+# Processing involves:
+# 1. Parsing regex into tokenTree
+# 1. Interpreting tokenTree for the given string
+#
+# The parsing step can be skipped if you already have the tokenTree preparsed. In that case please run `function string:regex_test/interpret`
 
 data modify storage string:internal regex_test.str set from storage string:in str
 data modify storage string:internal regex_test.regex set from storage string:in regex
@@ -18,5 +30,3 @@ data remove storage string:out tokenTree
 data modify storage string:in str set from storage string:internal regex_test.regex
 data modify storage string:in pathToToken set value 'tokenTree'
 function string:regex_test/parse_to_tokens
-
-tellraw @a {"text": "Parsed succesfully", "color": "red"}

@@ -1,5 +1,8 @@
-#> string:in {str1: string; str2: string}
-#> @returns 1 | 0
+#> string:equals/call
+# @input string:in {str1: string; str2: string}
+# @returns 1 | 0
+# @output #isSuccess string.math
+# Checks for string equality
 
 data modify storage string:internal str1 set from storage string:in str1
 

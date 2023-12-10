@@ -1,7 +1,9 @@
-#> {arr: any[]; functionReference: string}
-# @private this function is designed for internal usage only
-# Every call to the *function reference* contains index i and element as macro params
-# the function callback returning 1 causes the loop to stop just like with *break* keyword
+#> string:private/arr_for_each/call
+# @private
+# @input {arr: any[]; functionReference: string}
+# Every call to the `function reference` contains index i and element as macro params.
+# 
+# The function callback returning `1` causes the loop to stop just like a `break` keyword
 
 scoreboard players set #index string.math 0
 execute store result score #arrLength string.math run data get storage string:in arr

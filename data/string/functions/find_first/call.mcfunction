@@ -1,5 +1,7 @@
-#> string:in {str: string; char: char}
+#> string:find_first/call
+# @input string:in {str: string; char: char}
 # @returns string:out {index: int}
+# Finds first char in the string
 
 data remove storage string:out index
 

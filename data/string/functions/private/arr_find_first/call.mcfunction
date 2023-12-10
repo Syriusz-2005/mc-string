@@ -1,6 +1,9 @@
-#> string:in {arr: char[]; char: string}
+#> string:private/arr_find_first/call
 # @private
-# @returns string:out {index: int}
+# @input string:in {arr: char[]; char: string}
+# @output string:out {index: int}
+#
+# Finds first element in the char array
 
 
 data modify storage string:internal arr_find_first.arr set from storage string:in arr

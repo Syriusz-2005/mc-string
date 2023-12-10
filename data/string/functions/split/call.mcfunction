@@ -1,5 +1,15 @@
-#> {str: string}
-# @returns string:out split
+#> string:split/call
+# @input string:in {str: string}
+# @output string:out split
+#
+# Splits the string into char array
+# #### Example usage
+# ```mcfunction
+# data modify storage string:in str set value 'My string!'
+# function string:split/call
+# data get storage string:out split
+# # ['M', 'y', ' ', 's', 't', 'r', 'i', 'n', 'g', '!'] 
+# ```
 
 data modify storage string:internal split.str set from storage string:in str
 
