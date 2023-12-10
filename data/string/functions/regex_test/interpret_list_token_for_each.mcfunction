@@ -7,7 +7,9 @@
 
 execute if score #tokenIndex string.math >= #tokenListLength string.math run return 1
 
-data modify storage string:in token set from storage string:internal regex_test.interpret.tokenList
+# $say stepping for of the token list $(anchor) $(index)
+
+$data modify storage string:in token set from storage string:internal regex_test.interpret.tokenList[$(index)]
 $function string:regex_test/interpret_token {anchor: $(anchor)}
 
 execute if score #tokenResult string.math matches 0 run return 0

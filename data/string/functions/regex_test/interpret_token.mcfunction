@@ -5,8 +5,10 @@
 # @output #tokenResult string.math
 # @macro {anchor: int}
 
+# $say interpreting generic token, anchor: $(anchor)
 
 $scoreboard players set #currAnchor string.math $(anchor)
+$data modify storage string:internal regex_test.interpret.macro.anchor set value $(anchor)
 
 execute store result score #tokenType string.math run data get storage string:in token.type
 scoreboard players set #tokenResult string.math 0

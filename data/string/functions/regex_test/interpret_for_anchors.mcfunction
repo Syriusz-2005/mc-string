@@ -6,7 +6,8 @@
 # @macro {anchor: int}
 
 execute if score #anchor string.math >= #strLength string.math run return 0
-
+# $say $(anchor)
+data modify storage string:in token set from storage string:in tokenTree
 function string:regex_test/interpret_token with storage string:internal regex_test.interpret.macro
 execute if score #tokenResult string.math matches 1 run return 1
 

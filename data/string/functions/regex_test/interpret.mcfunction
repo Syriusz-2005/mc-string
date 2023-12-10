@@ -10,12 +10,13 @@
 scoreboard players set #tokenResult string.math 0
 
 execute store result score #strLength string.math run data get storage string:in str
-data modify storage string:internal regex_test.interpret.macro.anchor set value 0
 function string:split/call
+data modify storage string:internal regex_test.interpret.macro.anchor set value 0
+scoreboard players set #anchor string.math 0
 data modify storage string:internal regex_test.interpret.strArray set from storage string:out split
 function string:regex_test/interpret_for_anchors with storage string:internal regex_test.interpret.macro
 
 scoreboard players operation #hasMatch string.math = #tokenResult string.math
-
+tellraw @s {"type": "score", "score": {"name": "#hasMatch", "objective": "string.math"}}
 execute if score #tokenResult string.math matches 0 run return 0
 return 1
