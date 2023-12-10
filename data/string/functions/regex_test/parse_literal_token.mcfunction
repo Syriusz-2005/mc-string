@@ -3,4 +3,4 @@
 # @output string:out $(pathToToken)
 
 $data modify storage string:out $(pathToToken).tokens insert $(index) value {type: 2}
-$data modify storage string:out $(pathToToken).tokens[$(index)].token set from storage string:in strArray[$(index)]
+$data modify storage string:out $(pathToToken).tokens[$(index)].char set from storage string:in strArray[$(index)]

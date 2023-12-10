@@ -30,3 +30,7 @@ data remove storage string:out tokenTree
 data modify storage string:in str set from storage string:internal regex_test.regex
 data modify storage string:in pathToToken set value 'tokenTree'
 function string:regex_test/parse_to_tokens
+
+data modify storage string:in tokenTree set from storage string:out tokenTree
+data modify storage string:in str set from storage string:internal regex_test.str
+function string:regex_test/interpret
