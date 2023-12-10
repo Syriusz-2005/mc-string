@@ -1,5 +1,7 @@
-#> {index: int; strLength: number}
+#> {index: int; strLength: number; pathToToken: string}
+# @output string:out $(pathToToken)
 
+$data modify storage string:out $(pathToToken) set value {type: 1}
 
 # recursively parsing the first part of the spliced regex
 data modify storage string:internal regex_test.alternateToken.start set value 0
@@ -7,6 +9,7 @@ $data modify storage string:internal regex_test.alternateToken.end set value $(i
 data modify storage string:in str set from storage string:internal regex_test.regex
 function string:slice/call with storage string:internal regex_test.alternateToken
 data modify storage string:in str set from storage string:out str 
+$data modify storage string:in pathToToken set value '$(pathToToken).left'
 function string:regex_test/parse_to_tokens
 
 
@@ -19,4 +22,5 @@ $data modify storage string:internal regex_test.alternateToken.end set value $(s
 data modify storage string:in str set from storage string:internal regex_test.regex
 function string:slice/call with storage string:internal regex_test.alternateToken
 data modify storage string:in str set from storage string:out str 
+$data modify storage string:in pathToToken set value '$(pathToToken).right'
 function string:regex_test/parse_to_tokens

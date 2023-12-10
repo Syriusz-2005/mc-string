@@ -14,9 +14,11 @@ data modify storage string:internal regex_test.tokensArray set from storage stri
 
 
 # recursively parsing the regex into regex tokens
-data remove storage string:internal regex_test.tokenTree
+data remove storage string:out tokenTree
 data modify storage string:in str set from storage string:internal regex_test.regex
+data modify storage string:in pathToToken set value 'tokenTree'
 function string:regex_test/parse_to_tokens
 
 tellraw @a {"text": "after parsing", "color": "red"}
 tellraw @a {"type": "nbt", "source": "storage", "storage": "string:internal", "nbt": "regex_test"}
+tellraw @a {"type": "nbt", "source": "storage", "storage": "string:out", "nbt": "tokenTree", "color": "green"}
