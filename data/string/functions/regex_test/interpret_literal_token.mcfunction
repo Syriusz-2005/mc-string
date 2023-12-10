@@ -1,5 +1,5 @@
 #> string:regex_test/interpret_literal_token
-# @private
+# @internal
 # @input string:internal regex_test.interpret {strArray: string}
 # @input string:in {token: LiteralToken}
 # @output #tokenResult string.math

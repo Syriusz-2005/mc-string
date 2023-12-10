@@ -1,5 +1,5 @@
 #> string:regex_test/interpret_list_token_for_each
-# @private
+# @internal
 # @input string:internal regex_test.interpret {strArray: string; tokenList: Token[]}
 # @input string:in {token: TokenList}
 # @output #tokenResult string.math
