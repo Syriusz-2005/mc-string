@@ -11,6 +11,12 @@
 # 1. Interpreting tokenTree for the given string
 #
 # The parsing step can be skipped if you already have the tokenTree preparsed. In that case please run `function string:regex_test/interpret`
+# #### Example usage
+# ```mcfunction
+# # this example involves an unsafe macro to simplify It. Normally please use string:regex_test/call function with storage as params to prevent any unexpected behaviour with unescaped input
+# function string:unsafe_macro_regex_test/call {str: 'Hello str!', regex: 'ello'}
+# scoreboard players get #hasMatch string.math
+# ```
 
 data modify storage string:internal regex_test.str set from storage string:in str
 data modify storage string:internal regex_test.regex set from storage string:in regex
@@ -34,3 +40,6 @@ function string:regex_test/parse_to_tokens
 data modify storage string:in tokenTree set from storage string:out tokenTree
 data modify storage string:in str set from storage string:internal regex_test.str
 function string:regex_test/interpret
+
+execute if score #hasMatch string.math matches 1 run return 1
+return 0
