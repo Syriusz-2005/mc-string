@@ -17,6 +17,6 @@ data modify storage string:internal regex_test.interpret.strArray set from stora
 function string:regex_test/interpret_for_anchors with storage string:internal regex_test.interpret.macro
 
 scoreboard players operation #hasMatch string.math = #tokenResult string.math
-tellraw @s {"type": "score", "score": {"name": "#hasMatch", "objective": "string.math"}}
+
 execute if score #tokenResult string.math matches 0 run return 0
 return 1
