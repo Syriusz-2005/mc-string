@@ -2,6 +2,8 @@
 
 # Welcome to the Syriusz's little string utilities library
 
+**🛠️ Under construction 🛠️**
+
 ## Getting started
 
 1. Place this datapack in the `datapacks` directory
