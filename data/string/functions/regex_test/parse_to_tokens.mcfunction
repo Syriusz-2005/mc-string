@@ -1,6 +1,7 @@
 #> string:in {str: string; pathToToken: string}
 # @output string:out $(pathToToken)
 
+
 execute store result storage string:out strLength int 1 run data get storage string:in str
 data modify storage string:out pathToToken set from storage string:in pathToToken
 execute store result score #strLength string.math run data get storage string:in str
